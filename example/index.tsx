@@ -4,11 +4,17 @@ import * as ReactDOM from 'react-dom';
 import { useQueryString } from '../dist';
 
 const App = () => {
-  const [query, setQuery] = useQueryString();
-  console.log(query);
+  const { query, setQuery, isLoading } = useQueryString({});
+
+  console.log(query, isLoading);
+
+  const handleChange = () => {
+    setQuery({ test: 111, tet: 123123 });
+  };
   return (
     <div>
       <h1>HelloWorld</h1>
+      <button onClick={handleChange}>test</button>
     </div>
   );
 };
