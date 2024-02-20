@@ -21,18 +21,42 @@ const App = () => {
   if (isLoading) <div>Loading ...</div>;
 
   return (
-    <div>
-      <h1 className="text-xl font-bold">useQueryString</h1>
-      <p>Query : {JSON.stringify(query)}</p>
-      <button onClick={handleChange}>change query string</button>
+    <div className="flex flex-col p-4 gap-6">
+      <div className="grid grid-cols-3 grid-rows-3">
+        <h1 className="text-xl font-bold">QueryString</h1>
+        <p className="col-span-2">설명</p>
+        <p className="col-span-3 text-2xl">Query : {JSON.stringify(query)}</p>
+        <button
+          className="col-span-3 bg-blue-500 text-white py-2 px-3"
+          onClick={handleChange}
+        >
+          change query string
+        </button>
+      </div>
 
-      <h1 className="text-xl font-bold">useDebounce</h1>
-      <p>{number}</p>
-      <button onClick={handleDebounce}>debounce - add</button>
+      <div className="grid grid-cols-3 grid-rows-3">
+        <h1 className="text-xl font-bold">Debounce</h1>
+        <p className="col-span-2 row-span-2">설명</p>
+        <p className="text-2xl text-center">{number}</p>
+        <button
+          className="col-span-3 bg-blue-500 text-white py-2 px-3"
+          onClick={handleDebounce}
+        >
+          증가
+        </button>
+      </div>
 
-      <h1 className="text-xl font-bold">useThrottle</h1>
-      <p>{number}</p>
-      <button onClick={handleThrottle}>throttle - sub</button>
+      <div className="grid grid-cols-3 grid-rows-3">
+        <h1 className="text-xl font-bold">Throttle</h1>
+        <p className="col-span-2 row-span-2">설명</p>
+        <p className="text-2xl text-center">{number}</p>
+        <button
+          className="col-span-3 bg-blue-500 text-white py-2 px-3"
+          onClick={handleThrottle}
+        >
+          감소
+        </button>
+      </div>
     </div>
   );
 };

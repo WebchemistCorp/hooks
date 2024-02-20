@@ -1,6 +1,6 @@
 import { useRef, useCallback } from 'react';
 
-export function useDebounce() {
+export const useDebounce = () => {
   // timeout을 clear 해주기 위해 ref에 Timer를 저장
   const schedule = useRef<NodeJS.Timeout>();
 
@@ -15,4 +15,4 @@ export function useDebounce() {
     },
     []
   );
-}
+};

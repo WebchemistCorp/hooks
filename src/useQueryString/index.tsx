@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 
-export function useQueryString<T = Record<string, unknown>>(initValue: T) {
+export const useQueryString = <T extends Record<string, string>>(
+  initValue: T
+) => {
   const prevQuery = useRef<any>(null);
   const [query, setQuery] = useState<T>(initValue);
   const [isLoading, setLoading] = useState<boolean>(true);
@@ -36,4 +38,4 @@ export function useQueryString<T = Record<string, unknown>>(initValue: T) {
   }, [query]);
 
   return { query, setQuery, isLoading };
-}
+};

@@ -1,6 +1,6 @@
 import { useRef, useCallback } from 'react';
 
-export function useThrottle() {
+export const useThrottle = () => {
   // 현재 함수 실행 후 timeout을 기다리는 상태인지 나타내는 boolean
   const isWaiting = useRef(false);
 
@@ -24,4 +24,4 @@ export function useThrottle() {
     },
     []
   );
-}
+};
