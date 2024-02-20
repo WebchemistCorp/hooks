@@ -1,12 +1,20 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { useQueryString, useDebounce, useThrottle } from '../dist';
+import {
+  useQueryString,
+  useDebounce,
+  useThrottle,
+  useCopyToClipboard,
+} from '../dist';
 
 const App = () => {
   const [number, setNumber] = React.useState<number>(0);
   const debounce = useDebounce();
   const throttle = useThrottle();
   const { query, setQuery, isLoading } = useQueryString({});
+  const [clipboardRef, onCopy, cliped] = useCopyToClipboard<
+    HTMLTextAreaElement
+  >();
 
   const handleChange = () => {
     setQuery({ test: 111, tet: 123123 });
@@ -17,8 +25,6 @@ const App = () => {
 
   const handleDebounce = debounce(addNumber, 1000);
   const handleThrottle = throttle(subNumber, 1000);
-
-  if (isLoading) <div>Loading ...</div>;
 
   return (
     <div className="flex flex-col p-4 gap-6">
@@ -57,6 +63,14 @@ const App = () => {
           감소
         </button>
       </div>
+
+      <div className="grid grid-cols-3 grid-rows-3">
+        <h1 className="text-xl font-bold">useCopyToClipboard</h1>
+      </div>
+
+      {cliped && <p>Cliped</p>}
+      <textarea ref={clipboardRef} />
+      <button onClick={onCopy}>Copy</button>
     </div>
   );
 };
