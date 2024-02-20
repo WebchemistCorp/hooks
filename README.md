@@ -28,7 +28,7 @@
 
 **useCopyToClipboard** - `ref`를 이용하여 `dom`을 선택하고 `onCopy` 함수로 해당 `dom`의 내용을 clipboard로 copy 할 수 있습니다.
 
-> <small>useCopyToClipboard가 테스트 환경 safari에서 실패하는 경우는 `정상`입니다. safari의 경우는 https에서만 동작하게 했기 때문입니다. ([링크](https://webkit.org/blog/10247/new-webkit-features-in-safari-13-1/))</small>)
+> <small>useCopyToClipboard가 테스트 환경 safari에서 실패하는 경우는 `정상`입니다. safari의 경우는 https에서만 동작하게 했기 때문입니다. ([링크](https://webkit.org/blog/10247/new-webkit-features-in-safari-13-1/))</small>
 
 **useGeolocation** - backlog
 
