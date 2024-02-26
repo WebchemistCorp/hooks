@@ -1,10 +1,11 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom/client';
 import {
   useQueryString,
   useDebounce,
   useThrottle,
   useCopyToClipboard,
+  useIdle,
 } from '../dist';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
   const [clipboardRef, onCopy, cliped] = useCopyToClipboard<
     HTMLTextAreaElement
   >();
+  const { isIdle } = useIdle(['mousemove']);
 
   const handleChange = () => {
     setQuery({ test: 111, tet: 123123 });
@@ -71,8 +73,14 @@ const App = () => {
       {cliped && <p>Cliped</p>}
       <textarea ref={clipboardRef} />
       <button onClick={onCopy}>Copy</button>
+
+      <h1>{isIdle && 'IDLE'}</h1>
+
+      <div className="w-20 h-20 bg-red-600"></div>
     </div>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root')!);
+root.render(<App />);
+// ReactDOM.render(<App />, document.getElementById('root'));

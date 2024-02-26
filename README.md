@@ -30,9 +30,9 @@
 
 > <small>useCopyToClipboard가 테스트 환경 safari에서 실패하는 경우는 `정상`입니다. safari의 경우는 https에서만 동작하게 했기 때문입니다. ([링크](https://webkit.org/blog/10247/new-webkit-features-in-safari-13-1/))</small>
 
-**useGeolocation** - backlog
+**useIdle** - 일정한 이벤트가 지정한 ms만큼 미동작을 체크합니다.
 
-**useIdel** - backlog
+**useGeolocation** - backlog
 
 **useIncludedInDOM** - backlog
 
