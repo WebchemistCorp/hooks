@@ -4,16 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "rm -rf ./dist && parcel index.html --no-cache",
+    "dev": "rm -rf ./dist && parcel index.html --no-cache",
     "build": "parcel build index.html - no-cache"
   },
   "dependencies": {
-    "react-app-polyfill": "^1.0.0"
+    "react-app-polyfill": "^1.0.6"
   },
   "alias": {
     "react": "../node_modules/react",
-    "react-dom": "../node_modules/react-dom/profiling",
-    "scheduler/tracing": "../node_modules/scheduler/tracing-profiling"
+    "react-dom": "../node_modules/react-dom"
   },
   "devDependencies": {
     "@types/react": "../node_modules/@types/react",
@@ -22,5 +21,17 @@
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "typescript": "^3.4.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
